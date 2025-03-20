@@ -8,24 +8,24 @@ import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin';
 export default defineConfig(({ mode }) => {
   return {
     root: __dirname,
-    cacheDir: `../node_modules/.vite`,
-    
+    cacheDir: `node_modules/.vite`,
+
     ssr: {
       noExternal: ['@analogjs/trpc','@trpc/server'],
     },
-    
+
     build: {
       outDir: '../dist/./app/client',
-      reportCompressedSize: true,    
+      reportCompressedSize: true,
       target: ['es2020'],
     },
     server: {
       fs: {
         allow: ['.'],
       },
-    },    
+    },
     plugins: [
-      
+
       analog({
         nitro: {
           routeRules: {
@@ -35,7 +35,7 @@ export default defineConfig(({ mode }) => {
           }
         }
       }),
-      
+
       nxViteTsPaths(),
     ],
     test: {
