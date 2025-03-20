@@ -1,7 +1,9 @@
 {
   "name": "app",
-  "$schema": "node_modules/nx/schemas/project-schema.json",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
+  "sourceRoot": "apps/app/src",
+  "tags": [],
   "targets": {
     "build": {
       "executor": "@analogjs/platform:vite",
@@ -17,15 +19,15 @@
       },
       "outputs": [
         "{options.outputPath}",
-        "{workspaceRoot}/dist/.nitro",
-        "{workspaceRoot}/dist/ssr",
-        "{workspaceRoot}/dist/analog"
+        "{workspaceRoot}/dist/apps/app/.nitro",
+        "{workspaceRoot}/dist/apps/app/ssr",
+        "{workspaceRoot}/dist/apps/app/analog"
       ],
       "options": {
-        "main": "src/main.ts",
-        "configFile": "vite.config.ts",
-        "outputPath": "dist/client",
-        "tsConfig": "tsconfig.app.json"
+        "main": "apps/app/src/main.ts",
+        "configFile": "apps/app/vite.config.ts",
+        "outputPath": "dist/apps/app/client",
+        "tsConfig": "apps/app/tsconfig.app.json"
       }
     },
     "serve": {
@@ -51,7 +53,5 @@
         "{projectRoot}/coverage"
       ]
     }
-  },
-  "tags": [],
-  "sourceRoot": "./src"
+  }
 }
