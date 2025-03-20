@@ -27,12 +27,17 @@ export default defineConfig(({ mode }) => {
     plugins: [
 
       analog({
+        additionalPagesDirs: ['/libs/notes'],
+        additionalAPIDirs: ['/libs/notes/src/api'],
         nitro: {
           routeRules: {
             '/': {
               prerender: false,
             }
-          }
+          },
+          prerender: {
+            failOnError: true,
+          },
         }
       }),
 
