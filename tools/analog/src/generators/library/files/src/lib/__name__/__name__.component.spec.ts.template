@@ -1,0 +1,21 @@
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { <%= String(name).charAt(0).toUpperCase() + String(name).slice(1) %>Component } from '.\/<%= name %>.component';
+
+describe('<%= String(name).charAt(0).toUpperCase() + String(name).slice(1) %>Component', () => {
+  let component: <%= String(name).charAt(0).toUpperCase() + String(name).slice(1) %>Component;
+  let fixture: ComponentFixture<<%= String(name).charAt(0).toUpperCase() + String(name).slice(1) %>Component>;
+
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      imports: [<%= String(name).charAt(0).toUpperCase() + String(name).slice(1) %>Component],
+    }).compileComponents();
+
+    fixture = TestBed.createComponent(<%= String(name).charAt(0).toUpperCase() + String(name).slice(1) %>Component);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+});

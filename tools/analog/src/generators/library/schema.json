@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/schema",
+  "$id": "Library",
+  "title": "Generate a Library with module routing",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "How should the library be named?",
+      "$default": {
+        "$source": "argv",
+        "index": 0
+      },
+      "x-prompt": "What name would you like to use?"
+    },
+    "trpc": {
+      "type": "boolean",
+      "description": "Should the library include a trpc router?"
+    },
+    "pages": {
+      "type": "boolean",
+      "description": "Should the library include pages?"
+    },
+    "contentRoutes": {
+      "type": "boolean",
+      "description": "Should the library include content routes?"
+    }
+  },
+  "required": ["name"]
+}

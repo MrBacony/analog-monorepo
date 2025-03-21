@@ -15,6 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@app/analog": ["tools/analog/src/index.ts"],
       "@app/notes": ["libs/notes/src/index.ts"]
     }
   },

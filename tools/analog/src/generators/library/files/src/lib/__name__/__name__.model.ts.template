@@ -1,0 +1,5 @@
+export type <%= String(name).charAt(0).toUpperCase() + String(name).slice(1) %> = {
+  id: number;
+  note: string;
+  createdAt: string;
+};

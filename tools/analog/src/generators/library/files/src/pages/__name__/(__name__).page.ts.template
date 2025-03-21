@@ -1,0 +1,30 @@
+import {Component, resource} from "@angular/core";
+import {injectTrpcLibClient} from "../../api/trpc/trpc-client";
+import {lastValueFrom} from "rxjs";
+
+@Component(
+  {
+    selector: 'lib-<%= name %>-index-page',
+    template: `
+      <div class="flex flex-col gap-4">
+        <h1><%= String(name).charAt(0).toUpperCase() + String(name).slice(1) %></h1>
+        <p>This is an Example Index Page</p>
+
+        @for (item of <%= name %>.value(); track item) {
+            <div class="item">
+              <p>{{item}}</p>
+            </div>
+        }
+
+      </div>
+    `,
+  }
+)
+export default class <%= String(name).charAt(0).toUpperCase() + String(name).slice(1) %>IndexPageComponent {
+  private trpc = injectTrpcLibClient();
+
+  public <%= name%> = resource({
+    loader: () => lastValueFrom(this.trpc.<%= name %>.list.query()),
+  });
+
+}
