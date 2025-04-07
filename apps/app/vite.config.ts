@@ -3,6 +3,7 @@
 import analog from '@analogjs/platform';
 import { defineConfig, Plugin } from 'vite';
 import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin';
+import tailwindcss from '@tailwindcss/vite';
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
@@ -11,7 +12,7 @@ export default defineConfig(({ mode }) => {
     cacheDir: `node_modules/.vite`,
 
     ssr: {
-      noExternal: ['@analogjs/trpc','@trpc/server'],
+      noExternal: ['@analogjs/trpc', '@trpc/server'],
     },
 
     build: {
@@ -25,7 +26,7 @@ export default defineConfig(({ mode }) => {
       },
     },
     plugins: [
-
+      tailwindcss(),
       analog({
         additionalPagesDirs: ['/libs/notes'],
         additionalAPIDirs: ['/libs/notes/src/api'],
@@ -33,12 +34,12 @@ export default defineConfig(({ mode }) => {
           routeRules: {
             '/': {
               prerender: false,
-            }
+            },
           },
           prerender: {
             failOnError: true,
           },
-        }
+        },
       }),
 
       nxViteTsPaths(),

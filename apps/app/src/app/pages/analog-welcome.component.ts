@@ -8,7 +8,7 @@ import { Note } from '../../note';
 
 @Component({
   selector: 'app-analog-welcome',
-  
+
   imports: [AsyncPipe, FormsModule, NgFor, DatePipe, NgIf],
   host: {
     class:
@@ -17,10 +17,12 @@ import { Note } from '../../note';
   template: `
     <main class="flex-1 mx-auto">
       <section class="space-y-6 pb-8 pt-6 md:pb-12 md:pt-10 lg:py-32">
-        <div
-          class="flex max-w-[64rem] flex-col items-center gap-4 text-center"
-        >
-          <img class="h-12 w-12" src="https://analogjs.org/img/logos/analog-logo.svg" alt="AnalogJs logo. Two red triangles and a white analog wave in front"/>
+        <div class="flex max-w-[64rem] flex-col items-center gap-4 text-center">
+          <img
+            class="h-12 w-12"
+            src="https://analogjs.org/img/logos/analog-logo.svg"
+            alt="AnalogJs logo. Two red triangles and a white analog wave in front"
+          />
           <a
             class="rounded-2xl bg-zinc-200 px-4 py-1.5 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
             target="_blank"
@@ -30,7 +32,7 @@ import { Note } from '../../note';
           <h1
             class="font-heading font-medium text-3xl sm:text-5xl md:text-6xl lg:text-7xl"
           >
-            <span class="text-[#DD0031]">Analog.</span> The fullstack Angular
+            <span class="text-slate-500">Analog.</span> The fullstack Angular
             meta-framework
           </h1>
           <p
@@ -61,9 +63,7 @@ import { Note } from '../../note';
           <h2 class="text-[#DD0031] font-medium text-3xl leading-[1.1]">
             Leave a note
           </h2>
-          <p
-            class="max-w-[85%] leading-normal sm:text-lg sm:leading-7"
-          >
+          <p class="max-w-[85%] leading-normal sm:text-lg sm:leading-7">
             This is an example of how you can use tRPC to superpower your
             client-server interaction.
           </p>
